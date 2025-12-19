@@ -132,11 +132,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-        //funcionalidad cantidad de uniades para agregar a stock
+        //funcionalidad cantidad de unidades para agregar a stock
         const contenedorCantidadProductos = document.getElementById("contenedor_cantidad_unidades");
         const labelsCantidadProductos = contenedorCantidadProductos.querySelectorAll("label");
 
-        const cantidadProductoSeleccionada = document.getElementById("cantidad_de_unidades_seleccionada");
+        const cantidadProductoSeleccionada = document.getElementById("cantidad_de_unidades_seleccionada_en_producto_existente");
         const inputPrecioProductoAgregar = document.getElementById("input_precio_del_producto_a_agregar");
         const totalProductoConCantidad = document.getElementById("total_con_unidades");
 
@@ -206,6 +206,140 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // 💲 Cambio de precio
         inputPrecioProductoAgregar.addEventListener("input", actualizarTotalProducto);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // JSON de productos
+        const productos = [
+            {
+                "codigo_de_barras": "1234567890123",
+                "id_producto": 1,
+                "nombre": "Producto Ejemplo 1",
+                "precio": 100,
+                "stock_actual": 50,
+                "stock_minimo": 10,
+                "categoria": "Categoría 1",
+                "img_url": "imagen1.jpg"
+            },
+            {
+                "codigo_de_barras": "9876543210987",
+                "id_producto": 2,
+                "nombre": "Producto Ejemplo 2",
+                "precio": 200,
+                "stock_actual": 30,
+                "stock_minimo": 5,
+                "categoria": "Categoría 2",
+                "img_url": "imagen2.jpg"
+            }
+        ];
+
+        // Obtener elementos
+        const input = document.getElementById('input_codigo_de_barras_ingresado');
+        const cartaProducto = document.getElementById('carta_de_producto_escaneado');
+        const cartaNoEncontrado = document.getElementById('carta_contenedora_de_no_se_encontro_producto');
+
+        // Ocultar ambas cartas inicialmente
+        cartaProducto.style.display = 'none';
+        cartaNoEncontrado.style.display = 'none';
+
+        let timeoutId = null;
+
+        // Función para buscar producto
+        function buscarProducto(codigo) {
+            return productos.find(p => p.codigo_de_barras === codigo.trim());
+        }
+
+        // Función principal
+        function procesarBusqueda() {
+            const codigo = input.value.trim();
+            
+            // Ocultar ambas cartas primero
+            cartaProducto.style.display = 'none';
+            cartaNoEncontrado.style.display = 'none';
+            
+            if (codigo) {
+                const producto = buscarProducto(codigo);
+                
+                if (producto) {
+                    cartaProducto.style.display = 'block';
+                } else {
+                    cartaNoEncontrado.style.display = 'block';
+                }
+            }
+        }
+
+        // Event listener para el input
+        input.addEventListener('input', function() {
+            if (timeoutId) clearTimeout(timeoutId);
+            
+            timeoutId = setTimeout(procesarBusqueda, 1000);
+        });
+
+
+
+        // Obtener elementos adicionales
+        const cartaEscaneo = document.getElementById('carta_de_escaneo');
+        const botonAgregar = document.getElementById('boton_agregar_nuevo_producto');
+
+        // Modificar la función procesarBusqueda
+        function procesarBusqueda() {
+            const codigo = input.value.trim();
+            
+            // Ocultar carta de escaneo y botón agregar
+            cartaEscaneo.style.display = 'none';
+            botonAgregar.style.display = 'none';
+            
+            // Ocultar ambas cartas de resultados
+            cartaProducto.style.display = 'none';
+            cartaNoEncontrado.style.display = 'none';
+            
+            if (codigo) {
+                const producto = buscarProducto(codigo);
+                
+                if (producto) {
+                    cartaProducto.style.display = 'block';
+                } else {
+                    cartaNoEncontrado.style.display = 'block';
+                }
+            }
+        }
+
+        // Función para volver a escanear
+        function volverAEscanear() {
+            // Mostrar carta de escaneo y botón agregar
+            cartaEscaneo.style.display = 'block';
+            botonAgregar.style.display = 'block';
+            
+            // Ocultar cartas de resultados
+            cartaProducto.style.display = 'none';
+            cartaNoEncontrado.style.display = 'none';
+            
+            // Limpiar input y enfocar
+            input.value = '';
+            input.focus();
+        }
+
+        // Agregar event listeners a botones con clase boton_volver_a_escanear
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('boton_volver_a_escanear')) {
+                volverAEscanear();
+            }
+        });
+
+
+
+
+
 
 
 

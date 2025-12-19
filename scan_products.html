@@ -244,33 +244,11 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6" style="margin-bottom: 30px;">
-            <h1 class="m-0">Escanear producto</h1>
-            <br>
-            <button type="submit" class="btn btn-success">Agregar nuevo producto</button>
-          </div><!-- /.col -->
-
-
-
-
-
-
-
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item active">Escanear producto</li>
-            </ol>
-          </div><!-- /.col -->
-
-
-
-
-
 
             <div class="col-md-6">
+              <button id="boton_agregar_nuevo_producto" type="submit" class="btn btn-success" style="margin-bottom: 10px;">Agregar nuevo producto</button>
               <!-- general form elements -->
-              <div class="card card-primary">
+              <div id="carta_de_escaneo" class="card card-primary">
                 <div class="card-header">
                   <h3 class="card-title">Escanear</h3>
                 </div>
@@ -280,7 +258,7 @@
                   <div class="card-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Código de barras</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Esperando escaneo" autofocus>
+                      <input type="text" class="form-control" id="input_codigo_de_barras_ingresado" placeholder="Esperando escaneo" autofocus>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Buscar por nombre</label>
@@ -315,9 +293,9 @@
     <!-- Main content -->
     <section class="content">
               <!-- Default box -->
-      <div class="card card-solid collapsed-card">
+      <div id="carta_de_producto_escaneado" class="card card-solid" style="display:none;">
         <div class="card-header">
-          <h3 class="card-title">Producto escaneado</h3>
+          <h3 class="card-title">Producto escaneado <button class="btn btn-primary boton_volver_a_escanear" style="margin-left:10px;">Volver a escanear</button></h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -397,7 +375,7 @@
             </div>
 
             <!-- Cantidad seleccionada -->
-            <div style="display:none;" id="cantidad_de_unidades_seleccionada">1</div>
+            <div style="display:none;" id="cantidad_de_unidades_seleccionada_en_producto_existente">1</div>
 
             <!-- Precio del producto (puede ser oculto o input) -->
             <input type="hidden" id="input_precio_del_producto_a_agregar" value="4612">
@@ -455,9 +433,9 @@
 
 
       <!-- Default box -->
-      <div class="card card-solid">
+      <div id="carta_contenedora_de_no_se_encontro_producto" class="card card-solid" style="display:none;">
         <div class="card-header">
-          <h3 class="card-title">No se encontró producto <button class="btn btn-primary" style="margin-left:10px;">Volver a escanear</button></h3>
+          <h3 class="card-title">No se encontró producto <button class="btn btn-primary boton_volver_a_escanear" style="margin-left:10px;">Volver a escanear</button></h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -469,13 +447,13 @@
         <div class="card-body">
           <div class="row">
             <div class="col-12 col-sm-6">
-              <h3 class="d-inline-block d-sm-none">Para agregar un nuevo producto por favor rellene los datos a continuación</h3>
+              <h3 class="d-inline-block d-sm-none">AGREGAR UN NUEVO PRODUCTO</h3>
               <div class="col-12">
                 <img src="dist/img/product_not_found.png" class="product-image" alt="Product Image">
               </div>
             </div>
             <div class="col-12 col-sm-6">
-              <h3 class="my-3">Para agregar un nuevo producto por favor rellene los datos a continuación</h3>
+              <h3 class="my-3">AGREGAR UN NUEVO PRODUCTO</h3>
               <p>Fecha: 11/12/2025</p>
 
               <hr>
