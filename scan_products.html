@@ -349,88 +349,85 @@
 
 
 
-              <div id="" class="btn-group btn-group-toggle" data-toggle="buttons">
+              <div id="contenedor_realizar_movimiento" class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-default text-center bg-info">
                   <input type="radio" name="color_option" id="color_option_b1" autocomplete="off">
                   <span class="text-xl">Entrada</span>
-                  <br>
-                  
                 </label>
+
                 <label class="btn btn-default text-center">
                   <input type="radio" name="color_option" id="color_option_b2" autocomplete="off">
                   <span class="text-xl">Salida</span>
-                  <br>
-                  
-                </label>
-                <div id="" style="display:none;">Entrada</div>
-
-
-              </div>
-
-
-
-              <h4 class="mt-3">Indique <small>la cantidad de unidades</small></h4>
-              <hr>
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option_b1" autocomplete="off">
-                  <span class="text-xl">1</span>
-                  <br>
-                  Unidad
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option_b2" autocomplete="off">
-                  <span class="text-xl">5</span>
-                  <br>
-                  Unidades
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option_b3" autocomplete="off">
-                  <span class="text-xl">10</span>
-                  <br>
-                  Unidades
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option_b4" autocomplete="off">
-                  <span class="text-xl">X</span>
-                  <br>
-                  Elegir otra cantidad
                 </label>
               </div>
 
-              <div class="bg-gray py-2 px-3 mt-4">
-                <h2 class="mb-0">
-                  <span>Total: </span> <span>$4.612,00</span>
-                </h2>
-                <h4 class="mt-0">
-                  <small>P / unidad: $4.612,00 </small>
-                </h4>
-              </div>
 
-              <div class="mt-4">
-                <div class="btn btn-primary btn-lg btn-flat">
-                  <i class="fas fa-plus fa-lg mr-2"></i>
-                  Añadir al stock
-                </div>
+              <input type="hidden" id="movimiento_a_realizar" name="movimiento_a_realizar" value="Entrada">
 
-                <div class="btn btn-default btn-lg btn-flat">
-                  <i class="fas fa-minus fa-lg mr-2"></i>
-                  Reducir del stock
-                </div>
 
-              </div>
+
+
+            <h4 class="mt-3">Indique <small>la cantidad de unidades</small></h4>
+            <hr>
+
+            <div id="contenedor_cantidad_unidades" class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-default text-center" id="label_cantidad_1">
+                <input type="radio" name="cantidad_option" id="input_cantidad_1" autocomplete="off">
+                <span class="text-xl" data-valor="1">1</span>
+                <br>Unidad
+              </label>
+
+              <label class="btn btn-default text-center" id="label_cantidad_5">
+                <input type="radio" name="cantidad_option" id="input_cantidad_5" autocomplete="off">
+                <span class="text-xl" data-valor="5">5</span>
+                <br>Unidades
+              </label>
+
+              <label class="btn btn-default text-center" id="label_cantidad_10">
+                <input type="radio" name="cantidad_option" id="input_cantidad_10" autocomplete="off">
+                <span class="text-xl" data-valor="10">10</span>
+                <br>Unidades
+              </label>
+
+              <label class="btn btn-default text-center" id="label_cantidad_otra">
+                <input type="radio" name="cantidad_option" id="input_cantidad_otra" autocomplete="off">
+                <span class="text-xl" data-valor="X">X</span>
+                <br>Elegir otra cantidad
+              </label>
+            </div>
+
+            <!-- Cantidad seleccionada -->
+            <div style="display:none;" id="cantidad_de_unidades_seleccionada">1</div>
+
+            <!-- Precio del producto (puede ser oculto o input) -->
+            <input type="hidden" id="input_precio_del_producto_a_agregar" value="4612">
+
+            <!-- Total dinámico -->
+            <div class="bg-gray py-2 px-3 mt-4">
+              <h2 class="mb-0">
+                <span>Total: </span> <span id="total_con_unidades">$4.612,00</span>
+              </h2>
+              <h4 class="mt-0">
+                <small>P / unidad: <span id="precio_unitario">$4.612,00</span></small>
+              </h4>
+            </div>
+
+
+
 
               <hr style="margin: 60px">
 
               <div class="mt-4">
-                <div class="btn btn-default btn-lg btn-flat">
-                  <i class="fas fa-pen fa-lg mr-2"></i>
-                  Editar info. del producto
+                
+
+                <div class="btn btn-default btn-lg btn-flat bg-info">
+                  <i class="fas fa-heart fa-lg mr-2"></i>
+                  Generar movimiento
                 </div>
 
-                <div class="btn btn-default btn-lg btn-flat bg-danger">
-                  <i class="fas fa-heart fa-lg mr-2"></i>
-                  Eliminar producto
+                <div class="btn btn-default btn-lg btn-flat bg-warning float-right">
+                  <i class="fas fa-pen fa-lg mr-2"></i>
+                  Editar info. del producto
                 </div>
               </div>
 
@@ -485,13 +482,13 @@
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Código de barras</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="RS0002029">
+                  <input type="text" class="form-control" id="" placeholder="" value="RS0002029">
                 </div>
 
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Indique el nombre</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del producto">
+                    <input type="text" class="form-control" id="" placeholder="Nombre del producto">
                 </div>
 
                 <div class="form-group">
@@ -506,13 +503,13 @@
                 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Indique el stock minimo para notificar re-stock</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Stock mínimo en unidades">
+                    <input type="text" class="form-control" id="" placeholder="Stock mínimo en unidades">
                 </div>
 
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Indique el precio del producto</label>
-                    <input type="number" class="form-control" id="input_precio_del_producto_a_agregar" placeholder="Precio por unidad" value="0">
+                    <input type="number" class="form-control" id="input_precio_del_producto_a_agregar_nuevo" placeholder="Precio por unidad" value="0">
                 </div>
 
 
@@ -520,47 +517,51 @@
 
 
 
-              <h4 class="mt-3">Indique <small>la cantidad de unidades a agregar</small></h4>
-              <hr>
-              <div id="contenedor_de_cantidad_de_unidades" class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-default text-center bg-info">
-                  <input type="radio" name="color_option" id="color_option_b1" autocomplete="off">
-                  <span class="text-xl">1</span>
-                  <br>
-                  Unidad
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option_b2" autocomplete="off">
-                  <span class="text-xl">5</span>
-                  <br>
-                  Unidades
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option_b3" autocomplete="off">
-                  <span class="text-xl">10</span>
-                  <br>
-                  Unidades
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option_b4" autocomplete="off">
-                  <span class="text-xl">X</span>
-                  <br>
-                  Elegir otra cantidad
-                </label>
+                <h4 class="mt-3">Indique <small>la cantidad de unidades a agregar</small></h4>
+                <hr>
 
+                <div id="contenedor_de_cantidad_de_unidades" class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-default text-center bg-info">
+                    <input type="radio" name="color_option" id="color_option_b1" autocomplete="off">
+                    <span class="text-xl" data-valor="1">1</span>
+                    <br>
+                    Unidad
+                  </label>
+                  <label class="btn btn-default text-center">
+                    <input type="radio" name="color_option" id="color_option_b2" autocomplete="off">
+                    <span class="text-xl" data-valor="5">5</span>
+                    <br>
+                    Unidades
+                  </label>
+                  <label class="btn btn-default text-center">
+                    <input type="radio" name="color_option" id="color_option_b3" autocomplete="off">
+                    <span class="text-xl" data-valor="10">10</span>
+                    <br>
+                    Unidades
+                  </label>
+                  <label class="btn btn-default text-center">
+                    <input type="radio" name="color_option" id="color_option_b4" autocomplete="off">
+                    <span class="text-xl" data-valor="X">X</span>
+                    <br>
+                    Elegir otra cantidad
+                  </label>
+                </div>
+
+                <!-- Mover el div que guarda la cantidad fuera del contenedor de labels -->
                 <div id="cantidad_de_unidades_seleccionada" style="display:none;">1</div>
 
+                <div class="bg-gray py-2 px-3 mt-4">
+                  <h2 class="mb-0">
+                    <span>Total: $</span><span id="total_con_unidades_nuevo_producto">0.00</span>
+                  </h2>
+                  <h4 class="mt-0">
+                    <span><small>P / unidad: $</small><small id="precio_por_unidad">0.00 </small></span>
+                  </h4>
+                </div>
 
-              </div>
+                <!-- Input para precio (puede estar oculto) -->
+                <input type="hidden" id="input_precio_del_producto_a_agregar" value="4612">
 
-              <div class="bg-gray py-2 px-3 mt-4">
-                <h2 class="mb-0">
-                  <span>Total: $</span><span id="total_con_unidades">0.00</span>
-                </h2>
-                <h4 class="mt-0">
-                  <span><small>P / unidad: $</small><small id="precio_por_unidad">0.00 </small></span>
-                </h4>
-              </div>
 
               <hr style="margin-top: 30px; margin-bottom: 30px;">
 
