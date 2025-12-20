@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-        // JSON de productos
+        // JSON de productos para pruebas
         const productos = [
             {
                 "codigo_de_barras": "1234567890123",
