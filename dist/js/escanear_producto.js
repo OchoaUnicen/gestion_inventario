@@ -290,6 +290,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Obtener elementos adicionales
         const cartaEscaneo = document.getElementById('carta_de_escaneo');
         const botonAgregar = document.getElementById('boton_agregar_nuevo_producto');
+        const input_codigo_de_barras_ingresado_para_agregar_nuevo = document.getElementById('input_codigo_de_barras_ingresado_para_agregar_nuevo');
+        
 
         // Modificar la función procesarBusqueda
         function procesarBusqueda() {
@@ -309,7 +311,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (producto) {
                     cartaProducto.style.display = 'block';
                 } else {
-                    cartaNoEncontrado.style.display = 'block';
+                    input_codigo_de_barras_ingresado_para_agregar_nuevo.value = input.value;
+                    cartaNoEncontrado.style.display = 'block';                    
                 }
             }
         }
@@ -318,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function volverAEscanear() {
             // Mostrar carta de escaneo y botón agregar
             cartaEscaneo.style.display = 'block';
-            botonAgregar.style.display = 'block';
+            // botonAgregar.style.display = 'block';
             
             // Ocultar cartas de resultados
             cartaProducto.style.display = 'none';

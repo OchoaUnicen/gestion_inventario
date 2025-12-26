@@ -5,49 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gestión de inventario | Muebleria</title>
 
-  <!-- Google Font: Source Sans Pro -->
+  {* Google Font: Source Sans Pro *}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
+  {* Font Awesome *}
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
+  {* Ionicons *}
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
+  {* Tempusdominus Bootstrap 4 *}
   <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
+  {* iCheck *}
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
+  {* JQVMap *}
   <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-  <!-- Theme style -->
+  {* Theme style *}
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
+  {* overlayScrollbars *}
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
+  {* Daterange picker *}
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
+  {* summernote *}
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
+  {* Preloader *}
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
 
-  <!-- Navbar -->
+  {* Navbar *}
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
+    {* Left navbar links *}
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
 
-    <!-- Right navbar links -->
+    {* Right navbar links *}
     <ul class="navbar-nav ml-auto">
 
 
-      <!-- Messages Dropdown Menu -->
+      {* Messages Dropdown Menu *}
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fas fa-box"></i>
@@ -55,7 +55,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="#" class="dropdown-item">
-            <!-- Message Start -->
+            {* Message Start *}
             <div class="media">
               <img src="dist/img/default-150x150.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
@@ -67,11 +67,11 @@
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> Hace 4 horas</p>
               </div>
             </div>
-            <!-- Message End -->
+            {* Message End *}
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <!-- Message Start -->
+            {* Message Start *}
             <div class="media">
               <img src="dist/img/default-150x150.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
@@ -83,7 +83,7 @@
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> Hace 2 horas</p>
               </div>
             </div>
-            <!-- Message End -->
+            {* Message End *}
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">Ver alertas de stock</a>
@@ -132,19 +132,19 @@
 
     </ul>
   </nav>
-  <!-- /.navbar -->
+  {* /.navbar *}
 
-  <!-- Main Sidebar Container -->
+  {* Main Sidebar Container *}
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
+    {* Brand Logo *}
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Muebleria</span>
     </a>
 
-    <!-- Sidebar -->
+    {* Sidebar *}
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+      {* Sidebar user panel (optional) *}
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -154,7 +154,7 @@
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
+      {* SidebarSearch Form *}
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Buscar" aria-label="Search">
@@ -166,11 +166,11 @@
         </div>
       </div>
 
-      <!-- Sidebar Menu -->
+      {* Sidebar Menu *}
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+          {* Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library *}
 
 
 
@@ -233,46 +233,46 @@
               </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
+      {* /.sidebar-menu *}
     </div>
-    <!-- /.sidebar -->
+    {* /.sidebar *}
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
+  {* Content Wrapper. Contains page content *}
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    {* Content Header (Page header) *}
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
 
             <div class="col-md-6">
-              <button id="boton_agregar_nuevo_producto" type="submit" class="btn btn-success" style="margin-bottom: 10px; display:none;">Agregar nuevo producto</button>
-              <!-- general form elements -->
+              <button id="boton_agregar_nuevo_producto" type="submit" class="btn btn-success" style="margin-bottom: 10px;">Agregar nuevo producto</button>
+              {* general form elements *}
               <div id="carta_de_escaneo" class="card card-primary">
                 <div class="card-header">
                   <h3 class="card-title">Escanear</h3>
                 </div>
-                <!-- /.card-header -->
-                <!-- form start -->
+                {* /.card-header *}
+                {* form start *}
                 <form>
                   <div class="card-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Código de barras</label>
                       <input type="text" class="form-control" id="input_codigo_de_barras_ingresado" placeholder="Esperando escaneo" autofocus>
                     </div>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                       <label for="exampleInputPassword1">Buscar por nombre</label>
                       <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre del producto">
-                    </div> -->
+                    </div>
                   </div>
-                  <!-- /.card-body -->
+                  {* /.card-body *}
 
                   <div class="card-footer">
-                    <!-- <button type="submit" class="btn btn-primary">Buscar</button> -->
+                    <button type="submit" class="btn btn-primary">Buscar</button>
                   </div>
                 </form>
               </div>
-              <!-- /.card -->
+              {* /.card *}
             </div>
 
 
@@ -285,14 +285,14 @@
 
 
 
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+        </div>{* /.row *}
+      </div>{* /.container-fluid *}
     </div>
-    <!-- /.content-header -->
+    {* /.content-header *}
 
-    <!-- Main content -->
+    {* Main content *}
     <section class="content">
-              <!-- Default box -->
+              {* Default box *}
       <div id="carta_de_producto_escaneado" class="card card-solid" style="display:none;">
         <div class="card-header">
           <h3 class="card-title">Producto escaneado <button class="btn btn-primary boton_volver_a_escanear" style="margin-left:10px;">Volver a escanear</button></h3>
@@ -303,7 +303,7 @@
             </button>
           </div>
         </div>
-        <!-- /.card-header -->
+        {* /.card-header *}
         <div class="card-body">
           <div class="row">
             <div class="col-12 col-sm-6">
@@ -374,13 +374,13 @@
               </label>
             </div>
 
-            <!-- Cantidad seleccionada -->
+            {* Cantidad seleccionada *}
             <div style="display:none;" id="cantidad_de_unidades_seleccionada_en_producto_existente">1</div>
 
-            <!-- Precio del producto (puede ser oculto o input) -->
+            {* Precio del producto (puede ser oculto o input) *}
             <input type="hidden" id="input_precio_del_producto_a_agregar" value="4612">
 
-            <!-- Total dinámico -->
+            {* Total dinámico *}
             <div class="bg-gray py-2 px-3 mt-4">
               <h2 class="mb-0">
                 <span>Total: </span> <span id="total_con_unidades">$4.612,00</span>
@@ -409,7 +409,7 @@
                 </div>
               </div>
 
-              <!-- <div class="mt-4 product-share">
+              {* <div class="mt-4 product-share">
                 <a href="#" class="text-gray">
                   <i class="fab fa-facebook-square fa-2x"></i>
                 </a>
@@ -422,17 +422,17 @@
                 <a href="#" class="text-gray">
                   <i class="fas fa-rss-square fa-2x"></i>
                 </a>
-              </div> -->
+              </div> *}
 
             </div>
           </div>
         </div>
-        <!-- /.card-body -->
+        {* /.card-body *}
       </div>
-      <!-- /.card -->
+      {* /.card *}
 
 
-      <!-- Default box -->
+      {* Default box *}
       <div id="carta_contenedora_de_no_se_encontro_producto" class="card card-solid" style="display:none;">
         <div class="card-header">
           <h3 class="card-title">No se encontró producto <button class="btn btn-primary boton_volver_a_escanear" style="margin-left:10px;">Volver a escanear</button></h3>
@@ -443,7 +443,7 @@
             </button>
           </div>
         </div>
-        <!-- /.card-header -->
+        {* /.card-header *}
         <div class="card-body">
           <div class="row">
             <div class="col-12 col-sm-6">
@@ -460,7 +460,7 @@
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Código de barras</label>
-                  <input type="text" class="form-control" id="input_codigo_de_barras_ingresado_para_agregar_nuevo" placeholder="" value="RS0002029">
+                  <input type="text" class="form-control" id="" placeholder="" value="RS0002029">
                 </div>
 
 
@@ -525,7 +525,7 @@
                   </label>
                 </div>
 
-                <!-- Mover el div que guarda la cantidad fuera del contenedor de labels -->
+                {* Mover el div que guarda la cantidad fuera del contenedor de labels *}
                 <div id="cantidad_de_unidades_seleccionada" style="display:none;">1</div>
 
                 <div class="bg-gray py-2 px-3 mt-4">
@@ -537,7 +537,7 @@
                   </h4>
                 </div>
 
-                <!-- Input para precio (puede estar oculto) -->
+                {* Input para precio (puede estar oculto) *}
                 <input type="hidden" id="input_precio_del_producto_a_agregar" value="4612">
 
 
@@ -553,16 +553,16 @@
             </div>
           </div>
         </div>
-        <!-- /.card-body -->
+        {* /.card-body *}
       </div>
-      <!-- /.card -->
+      {* /.card *}
 
 
 
     </section>
-    <!-- /.content -->
+    {* /.content *}
   </div>
-  <!-- /.content-wrapper -->
+  {* /.content-wrapper *}
   <footer class="main-footer">
     <strong>Copyright &copy; 2025 <a href="https://paranatiger.com">ParanaTiger</a></strong>
     All rights reserved.
@@ -572,45 +572,47 @@
     </div>
   </footer>
 
-  <!-- Control Sidebar -->
+  {* Control Sidebar *}
   <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
+    {* Control sidebar content goes here *}
   </aside>
-  <!-- /.control-sidebar -->
+  {* /.control-sidebar *}
 </div>
-<!-- ./wrapper -->
+{* ./wrapper *}
 
-<!-- jQuery -->
+{* jQuery *}
 <script src="plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
+{* jQuery UI 1.11.4 *}
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+{* Resolve conflict in jQuery UI tooltip with Bootstrap tooltip *}
 <script>
+{literal}
   $.widget.bridge('uibutton', $.ui.button)
+{/literal}
 </script>
-<!-- Bootstrap 4 -->
+{* Bootstrap 4 *}
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
+{* ChartJS *}
 <script src="plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
+{* Sparkline *}
 <script src="plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
+{* JQVMap *}
 <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
 <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
+{* jQuery Knob Chart *}
 <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
+{* daterangepicker *}
 <script src="plugins/moment/moment.min.js"></script>
 <script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
+{* Tempusdominus Bootstrap 4 *}
 <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
+{* Summernote *}
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
+{* overlayScrollbars *}
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
+{* AdminLTE App *}
 <script src="dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
+{* AdminLTE for demo purposes *}
 <script src="dist/js/demo.js"></script>
 
 

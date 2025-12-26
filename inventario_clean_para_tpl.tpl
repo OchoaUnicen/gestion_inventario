@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión de inventario | Muebleria</title>
+
+  {* Google Font: Source Sans Pro *}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  {* Font Awesome *}
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  {* Ionicons *}
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  {* Tempusdominus Bootstrap 4 *}
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  {* iCheck *}
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  {* JQVMap *}
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  {* Theme style *}
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  {* overlayScrollbars *}
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  {* Daterange picker *}
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  {* summernote *}
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  {* Preloader *}
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  {* Navbar *}
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    {* Left navbar links *}
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    {* Right navbar links *}
+    <ul class="navbar-nav ml-auto">
+
+
+      {* Messages Dropdown Menu *}
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fas fa-box"></i>
+          <span class="badge badge-danger navbar-badge">2</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            {* Message Start *}
+            <div class="media">
+              <img src="dist/img/default-150x150.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Escritorio grande
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Sin Stock</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> Hace 4 horas</p>
+              </div>
+            </div>
+            {* Message End *}
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            {* Message Start *}
+            <div class="media">
+              <img src="dist/img/default-150x150.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Sillas de comedor
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Queda poco stock</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> Hace 2 horas</p>
+              </div>
+            </div>
+            {* Message End *}
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">Ver alertas de stock</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li class="nav-item" style="display:none;">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
+  </nav>
+  {* /.navbar *}
+
+  {* Main Sidebar Container *}
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    {* Brand Logo *}
+    <a href="index3.html" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Muebleria</span>
+    </a>
+
+    {* Sidebar *}
+    <div class="sidebar">
+      {* Sidebar user panel (optional) *}
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Nombre de prueba</a>
+        </div>
+      </div>
+
+      {* SidebarSearch Form *}
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Buscar" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {* Sidebar Menu *}
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          {* Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library *}
+
+
+
+            <li class="nav-item">
+              <a href="scan_products.html" class="nav-link">
+                <i class="nav-icon fas fa-barcode"></i>
+                <p>
+                  Scannear producto
+                </p>
+              </a>
+            </li>
+
+
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="inventario.html" class="nav-link active">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Inventario
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="movimientos.html" class="nav-link">
+                  <i class="nav-icon fa fa-truck"></i>
+                  <p>
+                    Movimientos
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="notificaciones.html" class="nav-link">
+                  <i class="nav-icon fas fa-bell"></i>
+                  <p>
+                    Notificaciones
+                  </p>
+                </a>
+              </li>
+
+
+
+              <li class="nav-item" style="margin-top: 50vh;">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-reply-all"></i>
+                  <p>
+                    Cerrar sesión
+                  </p>
+                </a>
+              </li>
+        </ul>
+      </nav>
+      {* /.sidebar-menu *}
+    </div>
+    {* /.sidebar *}
+  </aside>
+
+  {* Content Wrapper. Contains page content *}
+  <div class="content-wrapper">
+    {* Content Header (Page header) *}
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Inventario</h1>
+          </div>{* /.col *}
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active">Inventario</li>
+            </ol>
+          </div>{* /.col *}
+        </div>{* /.row *}
+      </div>{* /.container-fluid *}
+    </div>
+    {* /.content-header *}
+
+    {* Main content *}
+    <section class="content">
+      <div class="container-fluid">
+        {* Small boxes (Stat box) *}
+        <div class="row">
+
+
+          <div class="col-lg-3 col-6">
+            {* small box *}
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>$7.150.280</h3>
+
+                <p>Valor Total Inventario</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">Ver todos <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          {* ./col *}
+
+          <div class="col-lg-3 col-6">
+          {* small box *}
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
+
+                <p>Total Productos</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">Ver todos los productos <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            {* small box *}
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>1</h3>
+
+                <p>Sin Stock</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">Revisar <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          {* ./col *}
+          <div class="col-lg-3 col-6">
+            {* small box *}
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>1</h3>
+
+                <p>Stock Bajo</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">Ver productos <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          {* ./col *}
+
+
+          {* <div class="col-sm-12" style="margin-bottom: 20px;">
+            <h3 class="m-0">Categorias</h3>
+          </div> *}
+          
+          {* /.col *}
+
+
+
+            {* Categorias card *}
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title" style="margin-right: 5px !important; ">Categorias: 3</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body table-responsive p-0">
+                <button style="width: 240px; height: 60px; margin: 10px;">Muebles</button>
+                <button style="width: 240px; height: 60px; margin: 10px;">Herramientas</button>
+                <button style="width: 240px; height: 60px; margin: 10px;">Respuestos</button>
+              </div>
+            </div>
+            {* /.card *}
+
+
+
+        </div>
+        {* /.row *}
+        {* Main row *}
+        <div class="row" style="margin-top: 50px;">
+          {* Left col *}
+          <section class="col-lg-12 connectedSortable">
+
+            {* PRODUCTOS MAS VENDIDOS *}
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Todos los productos</h3>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-sm">
+                    <i class="fas fa-download"></i>
+                  </a>
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body table-responsive p-0">
+                <table class="table table-striped table-valign-middle">
+                  <thead>
+                  <tr>
+                    <th>ID del producto</th>
+                    <th>Producto</th>
+                    <th>Código de barras</th>
+                    <th>Categoria</th>
+                    <th>Precio Unidad</th>
+                    <th>Stock actual</th>
+                    <th>Stock mínimo</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                      Sofá modular
+                    </td>
+                    <td>
+                      SO00001
+                    </td>
+                    <td>
+                      Muebles
+                    </td>
+                    <td>$ 28.600</td>
+                    <td>
+                      11 
+                    </td>
+                    <td>
+                      2 
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      2
+                    </td>
+                    <td>
+                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                      Mesa de comedor extensible        
+                    </td>
+                    <td>
+                      SO00044
+                    </td>
+                    <td>
+                      Muebles
+                    </td>
+                    <td>$184.440</td>
+                    <td>
+                      7 
+                    </td>
+                    <td>
+                      2
+                    </td>
+                  </tr>
+                    <tr>
+                      <td>
+                      3
+                    </td>
+                    <td>
+                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                      Estantería flotante
+                    </td>
+                    <td>
+                      RN00331
+                    </td>
+                    <td>
+                      Muebles
+                    </td>
+                    <td>$47.200</td>
+                    <td>
+                      6 
+                    </td>
+                    <td>
+                      1 
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      4
+                    </td>
+                    <td>
+                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                      Cama con almacenamiento debajo
+                    </td>
+                    <td>
+                      FO01048
+                    </td>
+                    <td>Muebles</td>
+                    <td>$147.000</td>
+                    <td>
+                      11 
+                    </td>
+                    <td>
+                      5
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      5
+                    </td>
+                    <td>
+                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                      Sillón reclinable
+                    </td>
+                    <td>
+                      SO00401
+                    </td>
+                    <td>Muebles</td>
+                    <td>$94.100</td>
+                    <td>
+                      9 
+                    </td>
+                    <td>
+                      2 
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {* /.card *}
+
+          </section>
+          {* /.Left col *}
+          {* right col (We are only adding the ID to make the widgets sortable)*}
+          <section class="col-lg-5 connectedSortable" style="display: none;">
+
+
+
+            {* solid sales graph *}
+            <div class="card bg-gradient-info">
+              <div class="card-header border-0">
+                <h3 class="card-title">
+                  <i class="fas fa-th mr-1"></i>
+                  Ventas
+                </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+              {* /.card-body *}
+              <div class="card-footer bg-transparent">
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="26" data-width="60" data-height="60"
+                           data-fgColor="#39CCCC">
+
+                    <div class="text-white">Sofá modular</div>
+                  </div>
+                  {* ./col *}
+                  <div class="col-4 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="18" data-width="60" data-height="60"
+                           data-fgColor="#39CCCC">
+
+                    <div class="text-white">Estantería flotante</div>
+                  </div>
+                  {* ./col *}
+                  <div class="col-4 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="6" data-width="60" data-height="60"
+                           data-fgColor="#39CCCC">
+
+                    <div class="text-white">Sillas de comedor</div>
+                  </div>
+                  {* ./col *}
+                </div>
+                {* /.row *}
+              </div>
+              {* /.card-footer *}
+            </div>
+            {* /.card *}
+
+          </section>
+          {* right col *}
+        </div>
+        {* /.row (main row) *}
+      </div>{* /.container-fluid *}
+    </section>
+    {* /.content *}
+  </div>
+  {* /.content-wrapper *}
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2025 <a href="https://muebleria.prospectar.xyz">Prospectar</a></strong>
+    All rights reserved.
+
+    <div class="float-right d-none d-sm-inline-block">
+      <p>Desarrollado por <b>Sebastian Bocek </b> e <b>Ignacio Ochoa</b></p>
+    </div>
+  </footer>
+
+  {* Control Sidebar *}
+  <aside class="control-sidebar control-sidebar-dark">
+    {* Control sidebar content goes here *}
+  </aside>
+  {* /.control-sidebar *}
+</div>
+{* ./wrapper *}
+
+{* jQuery *}
+<script src="plugins/jquery/jquery.min.js"></script>
+{* jQuery UI 1.11.4 *}
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+{* Resolve conflict in jQuery UI tooltip with Bootstrap tooltip *}
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+{* Bootstrap 4 *}
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+{* ChartJS *}
+<script src="plugins/chart.js/Chart.min.js"></script>
+{* Sparkline *}
+<script src="plugins/sparklines/sparkline.js"></script>
+{* JQVMap *}
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+{* jQuery Knob Chart *}
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+{* daterangepicker *}
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+{* Tempusdominus Bootstrap 4 *}
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+{* Summernote *}
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+{* overlayScrollbars *}
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+{* AdminLTE App *}
+<script src="dist/js/adminlte.js"></script>
+{* AdminLTE for demo purposes *}
+<script src="dist/js/demo.js"></script>
+{* AdminLTE dashboard demo (This is only for demo purposes) *}
+<script src="dist/js/pages/dashboard.js"></script>
+</body>
+</html>
