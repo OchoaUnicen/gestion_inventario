@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Gestión de Stock | Funcionalidades</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #8b5cf6, #ec4899, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+      transition: all .3s ease;
+    }
+
+    .feature-icon {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      box-shadow: 0 10px 25px -5px rgba(139,92,246,.3);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen text-white p-6">
+
+<div class="max-w-7xl mx-auto space-y-16">
+
+  <!-- INTRO -->
+  <section class="glass-card rounded-3xl p-10">
+    <h1 class="text-4xl md:text-5xl font-black mb-6 text-center">
+      Sistema de <span class="gradient-text">Gestión de Stock</span>
+    </h1>
+    <!-- <p class="text-xl text-white/80 max-w-4xl mx-auto text-center">
+      El sistema está compuesto por distintas interfaces que permiten administrar productos,
+      controlar movimientos de inventario, recibir alertas de stock y visualizar información clave
+      del negocio de forma clara y ordenada.
+    </p> -->
+  </section>
+
+  <!-- INTERFACES -->
+  <section>
+    <h2 class="text-4xl font-black mb-12 text-center">
+      Interfaces del <span class="gradient-text">Sistema</span>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Inventario -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="boxes" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Inventario</h3>
+        <p class="text-white/70 leading-relaxed">
+          La interfaz de inventario permite visualizar el listado completo de productos registrados.
+          Para cada producto se muestra información clave como:
+        </p>
+        <ul class="mt-4 space-y-2 text-white/70 list-disc list-inside">
+          <li>Nombre del producto</li>
+          <li>Código de barras</li>
+          <li>Stock disponible</li>
+          <li>Precio</li>
+        </ul>
+      </div>
+
+      <!-- Escaneo -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="barcode" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Escaneo de Productos</h3>
+        <p class="text-white/70 leading-relaxed">
+          Desde esta interfaz se pueden identificar productos mediante el escaneo del código de barras.
+          El sistema permite:
+        </p>
+        <ul class="mt-4 space-y-2 text-white/70 list-disc list-inside">
+          <li>Identificar productos existentes</li>
+          <li>Agregar nuevos productos</li>
+          <li>Editar información de productos ya registrados</li>
+        </ul>
+      </div>
+
+      <!-- Movimientos -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="repeat" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Movimientos de Stock</h3>
+        <p class="text-white/70 leading-relaxed">
+          La interfaz de movimientos muestra el historial completo de operaciones realizadas
+          sobre el inventario, permitiendo visualizar:
+        </p>
+        <ul class="mt-4 space-y-2 text-white/70 list-disc list-inside">
+          <li>Entradas de stock</li>
+          <li>Salidas de stock</li>
+          <li>Producto involucrado</li>
+          <li>Cantidad y fecha del movimiento</li>
+        </ul>
+      </div>
+
+      <!-- Notificaciones -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="alert-triangle" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Notificaciones</h3>
+        <p class="text-white/70 leading-relaxed">
+          Esta interfaz centraliza las alertas automáticas del sistema, mostrando:
+        </p>
+        <ul class="mt-4 space-y-2 text-white/70 list-disc list-inside">
+          <li>Productos con stock bajo</li>
+          <li>Productos sin stock</li>
+        </ul>
+        <p class="mt-4 text-white/70">
+          Esto permite anticiparse a reposiciones y evitar faltantes.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="glass-card rounded-3xl p-10">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="feature-icon p-4 rounded-2xl">
+        <i data-lucide="layout-dashboard" class="w-8 h-8"></i>
+      </div>
+      <h2 class="text-3xl font-black">
+        Dashboard
+      </h2>
+    </div>
+
+    <p class="text-white/70 leading-relaxed max-w-4xl">
+      El dashboard ofrece una vista general del estado del sistema mediante indicadores simples (KPIs),
+      pensados para brindar información rápida sin aumentar el costo ni la complejidad del desarrollo.
+    </p>
+
+    <p class="mt-4 text-white/70">
+      Inicialmente, el dashboard puede incluir métricas básicas como estado general del stock
+      y alertas activas, quedando preparado para incorporar indicadores más avanzados en futuras etapas.
+    </p>
+  </section>
+
+</div>
+
+<script>
+  lucide.createIcons({ strokeWidth: 1.8 });
+</script>
+
+</body>
+</html>

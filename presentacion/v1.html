@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Gestión de Stock | Inventario Inteligente</title>
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #8b5cf6, #ec4899, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+      transition: all .3s ease;
+    }
+
+    .feature-icon {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      box-shadow: 0 10px 25px -5px rgba(139,92,246,.3);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen text-white p-6">
+
+<div class="max-w-7xl mx-auto space-y-16">
+
+  <!-- HERO -->
+  <section class="glass-card rounded-3xl p-10 relative overflow-hidden">
+    <div class="absolute -top-32 -right-32 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+    <div class="relative z-10 text-center max-w-3xl mx-auto">
+      <h1 class="text-5xl font-black mb-6">
+        Sistema de <span class="gradient-text">Gestión de Stock</span>
+      </h1>
+      <p class="text-xl text-white/80 mb-10">
+        Controlá tu inventario en tiempo real, reducí errores y evitá quiebres de stock con un sistema simple, rápido y confiable.
+      </p>
+
+      <a href="#" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 font-bold py-4 px-10 rounded-2xl text-lg shadow-xl hover:opacity-90">
+        <i data-lucide="zap" class="inline w-5 h-5 mr-2"></i>
+        Solicitar Demo
+      </a>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-black mb-4">
+        Funcionalidades <span class="gradient-text">Principales</span>
+      </h2>
+      <p class="text-white/70 text-xl max-w-3xl mx-auto">
+        Todo lo necesario para administrar productos, movimientos y alertas de stock desde un solo lugar.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Productos -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="package" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Gestión de Productos</h3>
+        <p class="text-white/70">
+          Alta y administración de productos con nombre, descripción, categoría, stock inicial y stock mínimo configurable.
+        </p>
+      </div>
+
+      <!-- Código de barras -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="barcode" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Código de Barras</h3>
+        <p class="text-white/70">
+          Identificación rápida de productos mediante lectura de códigos de barras, reduciendo tiempos y errores manuales.
+        </p>
+      </div>
+
+      <!-- Movimientos -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="repeat" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Movimientos de Stock</h3>
+        <p class="text-white/70">
+          Registro detallado de entradas y salidas de mercadería con actualización automática del inventario.
+        </p>
+      </div>
+
+      <!-- Entradas -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="log-in" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Entradas de Mercadería</h3>
+        <p class="text-white/70">
+          Registro de compras, devoluciones o ajustes de stock con fecha, cantidad, usuario y observaciones.
+        </p>
+      </div>
+
+      <!-- Salidas -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="log-out" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Salidas de Stock</h3>
+        <p class="text-white/70">
+          Control preciso de ventas, consumo interno o pérdidas, manteniendo el stock siempre actualizado.
+        </p>
+      </div>
+
+      <!-- Alertas -->
+      <div class="glass-card rounded-3xl p-8 card-hover">
+        <div class="feature-icon p-4 rounded-2xl w-fit mb-6">
+          <i data-lucide="alert-triangle" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Alertas de Stock</h3>
+        <p class="text-white/70">
+          Notificaciones automáticas cuando un producto alcanza stock mínimo o queda sin unidades disponibles.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="glass-card rounded-3xl p-10">
+    <h2 class="text-4xl font-black mb-8 text-center">
+      Beneficios <span class="gradient-text">Claves</span>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8 text-white/80">
+      <div class="flex gap-4">
+        <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+        Control de inventario en tiempo real
+      </div>
+      <div class="flex gap-4">
+        <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+        Reducción de errores operativos
+      </div>
+      <div class="flex gap-4">
+        <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+        Mayor trazabilidad y auditoría
+      </div>
+      <div class="flex gap-4">
+        <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+        Prevención de quiebres de stock
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="glass-card rounded-3xl p-10 text-center">
+    <h2 class="text-4xl font-black mb-6">
+      Optimizá tu <span class="gradient-text">Inventario</span>
+    </h2>
+    <p class="text-xl text-white/80 mb-8">
+      Implementá un sistema profesional de control de stock adaptado a tu negocio.
+    </p>
+    <a href="#" class="bg-gradient-to-r from-purple-600 to-pink-600 font-bold py-5 px-12 rounded-2xl text-xl shadow-xl hover:opacity-90">
+      Empezar ahora
+    </a>
+  </section>
+
+</div>
+
+<script>
+  lucide.createIcons({ strokeWidth: 1.8 });
+</script>
+
+
+</body>
+</html>
