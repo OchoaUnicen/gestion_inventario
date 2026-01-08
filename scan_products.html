@@ -268,17 +268,34 @@
 
                     <script src="https://unpkg.com/html5-qrcode"></script>
                     <script>
-                    const scanner = new Html5Qrcode("reader");
+                    const html5QrCode = new Html5Qrcode("reader");
 
-                    scanner.start(
+                    const config = {
+                      fps: 10,
+                      qrbox: { width: 250, height: 100 },
+                      formatsToSupport: [
+                        Html5QrcodeSupportedFormats.EAN_13,
+                        Html5QrcodeSupportedFormats.EAN_8,
+                        Html5QrcodeSupportedFormats.CODE_128,
+                        Html5QrcodeSupportedFormats.CODE_39,
+                        Html5QrcodeSupportedFormats.UPC_A,
+                        Html5QrcodeSupportedFormats.UPC_E
+                      ]
+                    };
+
+                    html5QrCode.start(
                       { facingMode: "environment" },
-                      { fps: 10, qrbox: 250 },
-                      (text) => {
-                        document.getElementById("input_codigo_de_barras_ingresado").value = text;
-                        scanner.stop();
+                      config,
+                      (decodedText) => {
+                        document.getElementById("input_codigo_de_barras_ingresado").value = decodedText;
+                        html5QrCode.stop();
+                      },
+                      (errorMessage) => {
+                        // silencioso, no loguear
                       }
                     );
                     </script>
+
 
 
 
