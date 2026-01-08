@@ -264,37 +264,47 @@
 
 
 
-                    <div id="reader" style="width:300px"></div>
+                    <div id="scanner" style="width: 100%; max-width: 400px;"></div>
 
-                    <script src="https://unpkg.com/html5-qrcode"></script>
+                    <script src="https://unpkg.com/@ericblade/quagga2/dist/quagga.js"></script>
                     <script>
-                    const html5QrCode = new Html5Qrcode("reader");
-
-                    const config = {
-                      fps: 10,
-                      qrbox: { width: 250, height: 100 },
-                      formatsToSupport: [
-                        Html5QrcodeSupportedFormats.EAN_13,
-                        Html5QrcodeSupportedFormats.EAN_8,
-                        Html5QrcodeSupportedFormats.CODE_128,
-                        Html5QrcodeSupportedFormats.CODE_39,
-                        Html5QrcodeSupportedFormats.UPC_A,
-                        Html5QrcodeSupportedFormats.UPC_E
-                      ]
-                    };
-
-                    html5QrCode.start(
-                      { facingMode: "environment" },
-                      config,
-                      (decodedText) => {
-                        document.getElementById("input_codigo_de_barras_ingresado").value = decodedText;
-                        html5QrCode.stop();
+                    Quagga.init({
+                      inputStream: {
+                        type: "LiveStream",
+                        target: document.querySelector('#scanner'),
+                        constraints: {
+                          facingMode: "environment",
+                          width: { ideal: 1280 },
+                          height: { ideal: 720 }
+                        }
                       },
-                      (errorMessage) => {
-                        // silencioso, no loguear
+                      decoder: {
+                        readers: [
+                          "ean_reader",
+                          "ean_8_reader",
+                          "code_128_reader",
+                          "upc_reader",
+                          "upc_e_reader"
+                        ]
+                      },
+                      locate: true
+                    }, function(err) {
+                      if (err) {
+                        console.error(err);
+                        return;
                       }
-                    );
+                      Quagga.start();
+                    });
+
+                    Quagga.onDetected(function(result) {
+                      const code = result.codeResult.code;
+
+                      document.getElementById("input_codigo_de_barras_ingresado").value = code;
+
+                      Quagga.stop();
+                    });
                     </script>
+
 
 
 
