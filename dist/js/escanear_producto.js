@@ -113,19 +113,54 @@ document.addEventListener("DOMContentLoaded", function() {
     const labels_de_movimiento = contenedor_realizar_movimiento.querySelectorAll("label");
     const input_movimiento = document.getElementById("movimiento_a_realizar");
 
+    // labels_de_movimiento.forEach(label => {
+    // label.addEventListener("click", () => {
+    //     // quitar bg-info a todos
+    //     labels_de_movimiento.forEach(l => l.classList.remove("bg-info"));
+
+    //     // agregar bg-info al clickeado
+    //     label.classList.add("bg-info");
+
+    //     // actualizar el input oculto con el texto del label
+    //     const texto = label.querySelector("span").innerText;
+    //     input_movimiento.value = texto;
+    //     });
+    // });
+
+
+
     labels_de_movimiento.forEach(label => {
     label.addEventListener("click", () => {
-        // quitar bg-info a todos
-        labels_de_movimiento.forEach(l => l.classList.remove("bg-info"));
 
-        // agregar bg-info al clickeado
-        label.classList.add("bg-info");
+        // remover clases de color de todos
+        labels_de_movimiento.forEach(l => {
+            l.classList.remove("bg-success", "bg-danger", "bg-info");
+        });
 
-        // actualizar el input oculto con el texto del label
+        // obtener el radio dentro del label
+        const radio = label.querySelector('input[type="radio"]');
+
+        // aplicar color según opción
+        if (radio.id === "color_option_b1") {
+            label.classList.add("bg-success");
+        }
+
+        if (radio.id === "color_option_b2") {
+            label.classList.add("bg-danger");
+        }
+
+        // actualizar input oculto
         const texto = label.querySelector("span").innerText;
         input_movimiento.value = texto;
-        });
     });
+});
+
+
+
+
+
+
+
 
 
 
