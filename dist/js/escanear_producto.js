@@ -175,6 +175,50 @@ document.addEventListener("DOMContentLoaded", function() {
         const inputPrecioProductoAgregar = document.getElementById("input_precio_del_producto_a_agregar");
         const totalProductoConCantidad = document.getElementById("total_con_unidades");
 
+
+
+
+        const labelUltimaCantidad = document.getElementById("label_ultima_cantidad");
+
+        if (labelUltimaCantidad) {
+            // limpiar estados visuales
+            labelsCantidadProductos.forEach(l => l.classList.remove("bg-info"));
+
+            // marcar visualmente
+            labelUltimaCantidad.classList.add("bg-info");
+
+            // obtener valor
+            const span = labelUltimaCantidad.querySelector("span");
+            const valor = span.dataset.valor || span.textContent.trim();
+
+            // setear cantidad lógica
+            cantidadProductoSeleccionada.textContent = valor;
+
+            // calcular total inicial
+            actualizarTotalProducto();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // 🔁 FUNCIÓN CENTRAL: calcular total
         function actualizarTotalProducto() {
             const precio = parseFloat(inputPrecioProductoAgregar.value) || 0;

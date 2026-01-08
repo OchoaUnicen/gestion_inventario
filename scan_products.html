@@ -259,6 +259,9 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Código de barras</label>
                       <input type="text" class="form-control" id="input_codigo_de_barras_ingresado" placeholder="Esperando escaneo" autofocus>
+                      <br>
+                      <p>Código de prueba:</p>
+                      <p>9876543210987</p>
                     </div>
 
 
@@ -439,7 +442,26 @@
             <h4 class="mt-3">Indique <small>la cantidad de unidades</small></h4>
             <hr>
 
+
+            
             <div id="contenedor_cantidad_unidades" class="btn-group btn-group-toggle" data-toggle="buttons">
+
+
+
+
+              <label class="btn btn-default text-center" id="label_ultima_cantidad">
+                <p>Última cantidad</p>
+                <input type="radio" name="cantidad_option" id="input_ultima_cantidad" autocomplete="off" checked>
+                <span class="text-xl" data-valor="250">250</span>
+                <br>Unidad
+              </label>
+
+
+
+
+
+
+
               <label class="btn btn-default text-center" id="label_cantidad_1">
                 <input type="radio" name="cantidad_option" id="input_cantidad_1" autocomplete="off">
                 <span class="text-xl" data-valor="1">1</span>
