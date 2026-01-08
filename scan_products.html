@@ -264,77 +264,84 @@
 
 
 
-                  <div id="scanner" style="width: 100%; max-width: 400px;"></div>
+                <div id="scanner" style="width: 100%; max-width: 400px;"></div>
 
-                  <script src="https://unpkg.com/@ericblade/quagga2/dist/quagga.js"></script>
-                  <script>
-                  let lecturas = {};
-                  let codigoConfirmado = false;
+                <script src="https://unpkg.com/@ericblade/quagga2/dist/quagga.js"></script>
+                <script>
+                let lecturas = {};
+                let codigoConfirmado = false;
+                let ultimoCodigo = null;
 
-                  Quagga.init({
-                    inputStream: {
-                      type: "LiveStream",
-                      target: document.querySelector('#scanner'),
-                      constraints: {
-                        facingMode: "environment",
-                        width: { ideal: 1280 },
-                        height: { ideal: 720 }
-                      },
-                      area: {
-                        top: "30%",
-                        right: "10%",
-                        left: "10%",
-                        bottom: "30%"
-                      }
+                Quagga.init({
+                  inputStream: {
+                    type: "LiveStream",
+                    target: document.querySelector('#scanner'),
+                    constraints: {
+                      facingMode: "environment",
+                      width: { ideal: 1280 },
+                      height: { ideal: 720 }
                     },
-                    locator: {
-                      halfSample: true
-                    },
-                    decoder: {
-                      readers: [
-                        "ean_reader",
-                        "ean_8_reader",
-                        "code_128_reader",
-                        "upc_reader",
-                        "upc_e_reader"
-                      ]
-                    },
-                    locate: true
-                  }, function(err) {
-                    if (err) {
-                      console.error(err);
-                      return;
+                    area: {
+                      top: "25%",
+                      right: "5%",
+                      left: "5%",
+                      bottom: "25%"
                     }
-                    Quagga.start();
-                  });
-
-                  Quagga.onDetected(function(result) {
-                    if (codigoConfirmado) return;
-
-                    const code = result.codeResult.code;
-
-                    // Contar repeticiones del mismo código
-                    lecturas[code] = (lecturas[code] || 0) + 1;
-
-                    // Aceptar cuando se repite 3 veces
-                    if (lecturas[code] >= 3) {
-                      codigoConfirmado = true;
-
-                      document.getElementById("input_codigo_de_barras_ingresado").value = code;
-
-                      Quagga.stop();
-
-                      console.log("Código confirmado:", code);
-                    }
-                  });
-                  </script>
-
-                  <style>
-                  #scanner video {
-                    width: 100%;
-                    height: auto;
+                  },
+                  locator: {
+                    halfSample: true
+                  },
+                  decoder: {
+                    readers: [
+                      "ean_reader",
+                      "ean_8_reader",
+                      "code_128_reader",
+                      "upc_reader",
+                      "upc_e_reader"
+                    ]
+                  },
+                  locate: true
+                }, function(err) {
+                  if (err) {
+                    console.error(err);
+                    return;
                   }
-                  </style>
+                  Quagga.start();
+                });
+
+                Quagga.onDetected(function(result) {
+                  if (codigoConfirmado) return;
+
+                  const code = result.codeResult.code;
+
+                  // Si cambia el código, resetear conteo
+                  if (ultimoCodigo && ultimoCodigo !== code) {
+                    lecturas = {};
+                  }
+
+                  ultimoCodigo = code;
+                  lecturas[code] = (lecturas[code] || 0) + 1;
+
+                  // Confirmar con 2 lecturas iguales
+                  if (lecturas[code] >= 2) {
+                    codigoConfirmado = true;
+
+                    document.getElementById("input_codigo_de_barras_ingresado").value = code;
+
+                    Quagga.stop();
+
+                    console.log("Código confirmado:", code);
+                  }
+                });
+                </script>
+
+                <style>
+                #scanner video {
+                  width: 100%;
+                  height: auto;
+                }
+                </style>
+
 
 
 
