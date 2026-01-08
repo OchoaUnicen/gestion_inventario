@@ -274,7 +274,7 @@
                       { facingMode: "environment" },
                       { fps: 10, qrbox: 250 },
                       (text) => {
-                        document.getElementById("barcode").value = text;
+                        document.getElementById("input_codigo_de_barras_ingresado").value = text;
                         scanner.stop();
                       }
                     );
